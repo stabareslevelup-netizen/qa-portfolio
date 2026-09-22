@@ -1,10 +1,7 @@
 # QA Portfolio: Sauce Demo UI Test Automation
 
 Automated end-to-end UI tests for [saucedemo.com](https://www.saucedemo.com),
-a public e-commerce demo site, built with **Playwright + Python**. Includes a
-self-running CI pipeline (GitHub Actions), an HTML test report, and one
-documented defect found and reported the way a QA engineer would in the real
-job.
+a public e-commerce demo site, built with **Playwright + Python**. Includes a self-running CI pipeline (GitHub Actions), an HTML test report, and one documented defect: a known issue in the demo site, written up the way a QA engineer would report it on the job.
 
 ## What this suite tests
 
@@ -51,21 +48,14 @@ of this repo to see run history.
 
 ## What I learned
 
-- How to drive a real browser with Playwright (clicking, typing, reading
-  page state) instead of just reading static HTML.
-- Why a **Page Object Model** matters: it keeps selectors in one place, so
-  when the site changes, I fix it in one file instead of eight.
-- How to write both **happy-path** and **negative/edge-case** tests
-  (wrong password, locked-out account, empty-cart checkout) — the negative
-  cases are usually where real bugs hide.
-- The difference between a test that's *broken* and a test that's
-  *intentionally failing*: using pytest's `xfail` marker to track a known
-  defect without making every CI run look red.
-- How to turn a bug I found into a proper **defect report** (steps to
-  reproduce, expected vs. actual, severity, environment) instead of just a
-  one-line complaint.
-- How to wire up a **CI/CD pipeline** so tests run on every push without me
-  having to remember to run them manually.
+- How an automated UI test suite is structured: tests drive a real browser through the same steps a user would take, then check what's on the screen.
+- Why the Page Object Model matters: each screen is described once, so when the site changes, the fix happens in one place instead of across every test.
+- Why negative tests (wrong password, locked-out account, empty cart) matter as much as happy paths, since that's often where real bugs hide.
+- The difference between a broken test and a tracked known defect, and why xfail keeps a known issue visible without turning every build red.
+- How CI works in practice: tests run on every push, and part of maintaining it is catching warnings early. I resolved deprecation warnings and pinned the runner OS so the build stays predictable.
+
+## How this was built
+- I built this project using Claude Code for AI-assisted development. I defined what to test, reviewed results, and maintained the CI pipeline, and I'm extending the suite with tests and defect reports I write myself.
 
 ## Project structure
 
