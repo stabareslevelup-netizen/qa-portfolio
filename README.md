@@ -57,10 +57,10 @@ of this repo to see run history.
 - Why the Page Object Model matters: each screen is described once, so when the site changes, the fix happens in one place instead of across every test.
 - Why negative tests (wrong password, locked-out account, empty cart) matter as much as happy paths, since that's often where real bugs hide.
 - The difference between a broken test and a tracked known defect, and why xfail keeps a known issue visible without turning every build red.
-- How CI works in practice: tests run on every push, and part of maintaining it is catching warnings early. I resolved deprecation warnings and pinned the runner OS so the build stays predictable.
+- How CI works in practice: tests run on every push, and part of maintaining it is catching warnings early. I caught CI deprecation warnings early and resolved them before they could break the build.
 
 ## How this was built
-- I built this project using Claude Code for AI-assisted development. I defined what to test, reviewed results, and maintained the CI pipeline, and I'm extending the suite with tests and defect reports I write myself.
+I built this project using Claude Code for AI-assisted development. I defined what to test, reviewed results, and maintained the CI pipeline.
 
 ## Project structure
 
