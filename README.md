@@ -41,6 +41,11 @@ Run just one file, e.g. login tests only:
 pytest tests/test_login.py
 ```
 
+## Process documentation
+
+- [`docs/TEST-PLAN.md`](docs/TEST-PLAN.md) — scope, test types, environments, entry/exit criteria, and risks.
+- [`docs/RELEASE-CHECKLIST.md`](docs/RELEASE-CHECKLIST.md) — the go/no-go gate before anything ships, including explicit conditions that delay a release.
+
 ## Continuous Integration
 
 Every push runs the full suite automatically via
@@ -78,5 +83,8 @@ tests/
   test_known_bug.py   # intentionally failing (xfail), documents a real bug
 defects/
   DEFECT-001-duplicate-product-images.md
+docs/
+  TEST-PLAN.md
+  RELEASE-CHECKLIST.md
 .github/workflows/tests.yml
 ```
